@@ -28,7 +28,7 @@ export const Register = () => {
       </Form>
 
       <p>¿Ya tienes una cuenta?</p>
-      <a>Inicia Sesión</a>
+      <a href='/login'>Inicia Sesión</a>
 
     </Container>
   )

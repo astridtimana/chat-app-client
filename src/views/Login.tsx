@@ -21,7 +21,7 @@ export const Login = () => {
       </Form>
 
       <p>¿No tienes una cuenta?</p>
-      <a>Regístrate</a>
+      <a href='/sign-up'>Regístrate</a>
 
     </Container>
   )
