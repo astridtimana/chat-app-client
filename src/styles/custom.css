@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;900&display=swap");
 /*!
  * Bootstrap v5.1.1 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors
@@ -11954,5 +11955,18 @@ fieldset:disabled .btn {
 .btn-purple {
   background-color: #613DC1;
   color: white;
+}
+
+.purple-font {
+  color: #613DC1;
+  text-decoration: none;
+}
+
+.text-general {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.f-500 {
+  font-weight: 500;
 }
 /*# sourceMappingURL=custom.css.map */

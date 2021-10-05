@@ -9,7 +9,7 @@ function AppRouter() {
 
     return (
       <Container
-        className="d-flex justify-content-center "
+        className="d-flex justify-content-center text-general"
         style={{ minHeight: "100vh" }}
       >
         <div className="w-100" style={{ minWidth: "350px" , maxWidth: "500px"}}>
