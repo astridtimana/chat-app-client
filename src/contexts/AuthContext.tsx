@@ -1,19 +1,19 @@
 import React, { useContext } from "react"
 
-const AuthContext = React.createContext()
+const AuthContext = React.createContext({})
 
 export function useAuth() {
   return useContext(AuthContext)
 }
 
-export function AuthProvider({ children }) {
+export function AuthProvider({ children }: any) {
 //   const [currentUser, setCurrentUser] = useState()
 //   const [loading, setLoading] = useState(true)
 
-  function signup(email, password) {
+  function signup(/* email, password */) {
   }
 
-  function login(email, password) {
+  function login(/* email, password */) {
   }
 
   function logout() {

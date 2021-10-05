@@ -1,2 +1,8 @@
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
 
+$purple : #613DC1;
+
+.btn-purple{
+    background-color: $purple;
+    color:white;
+}
