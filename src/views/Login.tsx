@@ -1,41 +1,45 @@
-import { useState } from 'react';
-import { Container, Form , Button} from 'react-bootstrap';
+// import { useState } from 'react';
+import { Container, Form } from 'react-bootstrap';
 
 export const Login = () => {
 
-  const [formData, setFormData] = useState({});
+  /* const [formData, setFormData] = useState({});
   const handleInputChange = ({event}:any) => {
     setFormData({
         ...formData,
         [event.target.name] : event.target.value
     })
-  }
+  } */
 
 
 
   return (
-    <Container fluid className="d-flex flex-column justify-content-evenly vh-100 f-500 trial">
-      <h2 className="text-center p-3">¡Bienvenidx!</h2>
-      <h2 className="text-center">Ingresa a tu cuenta</h2>
-      <Form className="d-flex flex-column justify-content-around" style={{minHeight:"19rem"}}>
-        <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Label>Email</Form.Label>
-          <Form.Control type="email" placeholder="hola@example.com" onChange={handleInputChange}/>
-        </Form.Group>
+    <Container fluid className="w-100 text-center py-3">
+      <img src="https://i.pinimg.com/564x/76/e1/b8/76e1b8b96085d2be3421b86000a636a9.jpg" alt="img" className="img-fluid mb-3" width="60%"/>
+      <div>
+        <h2 className="text-center p-3">¡Bienvenidx!</h2>
+        <h5 className="text-center mb-3">Ingresa a tu cuenta</h5>
+      </div>
+      <Form className="d-flex flex-column align-items-center mb-2"/*  style={{minHeight:"19rem"}} */
+         /* onSubmit={} */
+      >
+        <section className="my-2 w-75 ">
+            <Form.Control className="mb-3" type="email" placeholder="Correo" name="email" required/>
+            <Form.Control type="password" placeholder="Contraseña" name="password" required/>
+        </section>
 
-        <Form.Group className="mb-3" controlId="formBasicPassword">
-          <Form.Label>Contraseña</Form.Label>
-          <Form.Control type="password" placeholder="******" onChange={handleInputChange}/>
-        </Form.Group>
-        <Button variant="primary" type="submit" className="mt-5 w-75 align-self-center btn btn-purple">
-          Ingresar
-        </Button>
+        <button type="submit" className="mt-3 mb-2 w-75 align-self-center btn btn-purple">
+          Iniciar sesión
+        </button>
       </Form>
 
-      <p>¿No tienes una cuenta?</p>
-      <a href='/sign-up'>Regístrate</a>
+
+
+      <div className="text-center mt-3">
+        <p>¿No tienes una cuenta?</p>
+        <a href='/sign-up' className="purple-font">Regístrate</a>
+      </div>
 
     </Container>
   )
 }
-
