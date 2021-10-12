@@ -9,10 +9,12 @@ function AppRouter() {
 
     return (
       <Container
-        className="d-flex justify-content-center text-general"
+        className="d-flex justify-content-center text-general align-items-center" 
+        /* el align items center lo pone cool pero ya en el chat tendríamos que cambiar
+        así que mejor lo vemos luego pero por lo pronto lo podemos dejar ahí uwu */
         style={{ minHeight: "100vh" }}
       >
-        <div className="w-100" style={{ minWidth: "350px" , maxWidth: "500px"}}>
+        <div className="w-100" style={{maxWidth:"400px"}} /* style={{ minWidth: "350px" , maxWidth: "500px"}} */>
           <Router>
             <Switch>
               <Route exact path='/' component={Dashboard}></Route>
