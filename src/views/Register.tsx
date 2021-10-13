@@ -1,10 +1,10 @@
-import React, { useState } from 'react'
+// import React, { useState } from 'react'
 import { Container, Form } from 'react-bootstrap'
 
 
 export const Register = () => {
 
-  const [formData, setFormData] = useState({});
+  /* const [formData, setFormData] = useState({});
   
   const handleSubmit = (e: React.SyntheticEvent) => {
       e.preventDefault();
@@ -22,7 +22,7 @@ export const Register = () => {
       console.log(userData);
     }
 
-  console.log(formData);
+  console.log(formData); */
 
   return (
     <Container fluid className="w-100 text-center py-3">
@@ -32,7 +32,7 @@ export const Register = () => {
         <h5 className="text-center">Crea tu cuenta</h5>
       </div>
       <Form className="d-flex flex-column align-items-center"/*  style={{minHeight:"19rem"}} */
-         onSubmit={handleSubmit}
+         /* onSubmit={handleSubmit} */
       >
         <section className="my-2 w-75 ">
           {/* <Form.Group className="mb-3" controlId="name">
