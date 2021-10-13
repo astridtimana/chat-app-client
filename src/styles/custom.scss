@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;900&display=swap');
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+
+$purple : #613DC1;
+
+.btn-purple{
+    background-color: $purple;
+    color:white;
+}
+
+.purple-font{
+    color: $purple;
+    text-decoration: none;
+}
+
+.text-general{
+    font-family: 'Montserrat', sans-serif;
+}
+
+.f-500{
+    font-weight: 500;
+}
