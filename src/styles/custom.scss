@@ -20,3 +20,29 @@ $purple : #613DC1;
 .f-500{
     font-weight: 500;
 }
+
+.desktopbG{
+    background-color: pink;
+}
+// $small: 300px;
+// $medium: 500px;
+
+// .trial {
+//   //some CSS
+//   @media screen and (max-width: $small) {
+//     //do Smth
+//   }
+//   @media (min-width: $medium) {
+//     //do Smth
+//     background-color: rgb(202, 40, 40) !important;
+//     color:red !important;
+//   }
+// }
+
+// .smth{
+//     @media (min-width: 900px) {
+//         &:not(.active) {
+//           background-color: red !important; // or whatever
+//         }
+//       }
+// }
