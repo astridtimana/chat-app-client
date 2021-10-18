@@ -1,26 +1,25 @@
 import { useState } from 'react';
 import { Container, Form } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
-import { postLogin } from '../services/auth'
+// import { postLogin } from '../services/auth'
+import { useAuth } from '../context/AuthContext';
 
 export const Login = () => {
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const {isAuthenticated, login, logout} = useAuth();
 
   const user = { email, password }
 
   let history = useHistory();
 
-  const handleSubmit = async (e: React.ChangeEvent<any>) => {
+  const handleSubmit = (e: React.ChangeEvent<any>) => {
     e.preventDefault();
 
-    try {
-      await postLogin(user)
-      return history.push('/')
-    } catch (err) {
-      console.log(err)
-    }
+    login(user);
+    if(isAuthenticated){history.push('/');}
+    
   }
 
   return (
