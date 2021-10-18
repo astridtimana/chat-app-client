@@ -14,7 +14,7 @@ function AppRouter() {
         así que mejor lo vemos luego pero por lo pronto lo podemos dejar ahí uwu */
         style={{ minHeight: "100vh", width: "100vw" }}
       >
-        <div className="w-100" style={{minWidth: "400px", maxWidth:"1000px"}} /* style={{ minWidth: "350px" , maxWidth: "500px"}} */>
+        <div className="w-100" style={{maxWidth: "400px"/* , maxWidth:"1000px" */}} /* style={{ minWidth: "350px" , maxWidth: "500px"}} */>
           <Router>
             <Switch>
               <Route exact path='/' component={Dashboard}></Route>

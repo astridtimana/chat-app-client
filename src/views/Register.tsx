@@ -1,28 +1,28 @@
-import React /*, { useState }*/ from "react";
+import { useState } from "react";
 import { Container, Form } from "react-bootstrap";
+import { useHistory } from 'react-router-dom';
+import { postUser } from '../services/users';
 
 export const Register = () => {
-  // const [formData, setFormData] = useState({});
 
-  const handleSubmit = (e: React.SyntheticEvent) => {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const user = { name, email, password }
+
+  let history = useHistory();
+
+  const handleSubmit = async (e: React.ChangeEvent<any>) => {
     e.preventDefault();
-    const target = e.target as typeof e.target & {
-      email: { value: string };
-      password: { value: string };
-      name: { value: string };
-    };
-    const email = target.email.value; // typechecks!
-    const password = target.password.value;
-    const name = target.name.value;
-    const userData = {
-      name,
-      email,
-      password,
-    }; /// typechecks!
-    console.log(userData);
-  };
+    try {
+      await postUser(user)
+      return history.push('/')
+    } catch (err) {
+      console.log(err)
+    }
+  }
 
-  // console.log(formData);
 
   return (
     <Container fluid className="w-100 text-center py-3 d-flex flex-row justify-content-evenly">
@@ -37,52 +37,45 @@ export const Register = () => {
         style={{maxWidth: "600px", minWidth: "375px"}}
         >
         <img
-                  src="https://i.pinimg.com/564x/76/e1/b8/76e1b8b96085d2be3421b86000a636a9.jpg"
-                  alt="img"
-                  className="mx-auto d-block d-sm-none"
-                  width="60%"
+          src="https://i.pinimg.com/564x/76/e1/b8/76e1b8b96085d2be3421b86000a636a9.jpg"
+          alt="img"
+          className="mx-auto d-block d-sm-none"
+          width="60%"
         
         />
         <div>
           <h2 className="text-center p-3">¡Bienvenidx!</h2>
           <h5 className="text-center">Crea tu cuenta</h5>
         </div>
+
         <Form
           className="d-flex flex-column align-items-center" /*  style={{minHeight:"19rem"}} */
           onSubmit={handleSubmit}
         >
           <section className="my-2 w-75 ">
-            {/* <Form.Group className="mb-3" controlId="name">
-            <Form.Label className="mb-3">Nombre</Form.Label> */}
+
             <Form.Control
               className="mb-3"
               type="text"
               placeholder="Name"
-              name="name"
+              onChange={(e) => setName(e.target.value)}
               required
             />
-            {/* </Form.Group> */}
 
-            {/* <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Label className="mb-3">Email</Form.Label> */}
             <Form.Control
               className="mb-3"
               type="email"
               placeholder="Correo"
-              name="email"
+              onChange={(e) => setEmail(e.target.value)}
               required
             />
-            {/* </Form.Group> */}
 
-            {/* <Form.Group className="mb-3" controlId="formBasicPassword">
-            <Form.Label className="mb-3">Contraseña</Form.Label> */}
             <Form.Control
               type="password"
               placeholder="Contraseña"
-              name="password"
+              onChange={(e) => setPassword(e.target.value)}
               required
             />
-            {/* </Form.Group> */}
           </section>
 
           <button

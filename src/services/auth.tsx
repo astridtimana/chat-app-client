@@ -1,26 +1,10 @@
-import axios from 'axios';
+import axios, { AxiosResponseHeaders } from 'axios';
 
-const baseUrl = 'be-chat-app.herokuapp.com';
+// const baseUrl = 'be-chat-app.herokuapp.com';
+const baseUrl = 'http://localhost:8080';
 
-// ------------ AUTH -------------//
-
-export const postAuth = async (data:any) =>{
-
-    const resp = await axios.post(baseUrl, data); 
-
-    switch (resp.status) {
-        case 200: 
-            break;
-
-        case 400: 
-            break;
-
-        default:
-            break;
-    }
-
-    return resp;
-
+export const postLogin = async (data: any) => {
+  const res: AxiosResponseHeaders = await axios.post(`${baseUrl}/auth`, data);
+  console.log(res.data);
+  return res.data
 }
-
-// create cookies
