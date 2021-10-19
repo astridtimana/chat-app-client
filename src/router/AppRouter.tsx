@@ -33,7 +33,7 @@ function AppRouter() {
 
     return (
       <Container
-        className="d-flex justify-content-evenly text-general align-items-center w-100" 
+        className="d-flex justify-content-center text-general align-items-center p-0 m-0"  
         /* el align items center lo pone cool pero ya en el chat tendríamos que cambiar
         así que mejor lo vemos luego pero por lo pronto lo podemos dejar ahí uwu */
         style={{ minHeight: "100vh", width: "100vw" }}

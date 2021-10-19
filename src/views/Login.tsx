@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Container, Form } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
 // import { postLogin } from '../services/auth'
@@ -8,22 +8,30 @@ export const Login = () => {
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const {isAuthenticated, login, logout} = useAuth();
+  const {isAuthenticated, login} = useAuth(); // false // true
 
   const user = { email, password }
-
   let history = useHistory();
+
+  useEffect(() => {
+    
+    if (isAuthenticated === true) {
+      history.push('/')
+    }
+  }, [isAuthenticated, history])
+  
 
   const handleSubmit = (e: React.ChangeEvent<any>) => {
     e.preventDefault();
 
     login(user);
-    if(isAuthenticated){history.push('/');}
+    /* console.log(isAuthenticated);
+    if(isAuthenticated){history.push('/');} */
     
   }
 
   return (
-    <Container fluid className="w-100 text-center py-3">
+    <Container fluid className="text-center py-2 my-3" style={{height: "100vh"}}>
       <img src="https://i.pinimg.com/564x/76/e1/b8/76e1b8b96085d2be3421b86000a636a9.jpg" alt="img" className="img-fluid mb-3" width="60%"/>
       <div>
         <h2 className="text-center p-3">¡Bienvenidx!</h2>

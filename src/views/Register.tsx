@@ -19,7 +19,7 @@ export const Register = () => {
     e.preventDefault();
     register(user)
     // console.log(isAuthenticated);
-    // if(isAuthenticated){history.push('/');}
+    if(isAuthenticated){history.push('/');}
   }
 
 
