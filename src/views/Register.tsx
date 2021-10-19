@@ -1,25 +1,22 @@
 import { useState } from "react";
 import { Container, Form } from "react-bootstrap";
-import { useHistory } from 'react-router-dom';
 import { useAuth } from "../context/AuthContext";
-import { postUser } from '../services/users';
+
 
 export const Register = () => {
 
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const {register, isAuthenticated} = useAuth()
+  const [ name, setName ] = useState('');
+  const [ email, setEmail ] = useState('');
+  const [ password, setPassword ] = useState('');
+  const { register } = useAuth()
 
   const user = { name, email, password }
 
-  let history = useHistory();
+  // Se renderiza a '/' cuando ve que isAuthenticated === true
 
   const handleSubmit =  (e: React.ChangeEvent<any>) => {
     e.preventDefault();
     register(user)
-    // console.log(isAuthenticated);
-    if(isAuthenticated){history.push('/');}
   }
 
 

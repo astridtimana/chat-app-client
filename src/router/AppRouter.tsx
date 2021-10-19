@@ -1,35 +1,13 @@
 import { Container } from 'react-bootstrap';
-import {BrowserRouter as Router, Route, Switch, Redirect} from 'react-router-dom';
-import { AuthProvider, useAuth } from '../context/AuthContext';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { AuthProvider } from '../context/AuthContext';
+import { PrivateRoute } from './PrivateRoute';
 import Dashboard from '../views/Dashboard';
 import { Login } from '../views/Login';
 import { Register } from '../views/Register';
 
-function PrivateRoute({children, rest}:any) {
 
-  const {isAuthenticated} = useAuth();
-  console.log(isAuthenticated);
-
-  return (  
-      <Route
-      {...rest}
-      render={({ location }) =>
-        isAuthenticated ?  (
-          children
-        ) : (
-          <Redirect
-            to={{
-              pathname: '/login',
-              state: { from: location }
-            }}
-          />
-        )
-      }
-    />
-  );
-}
-
-function AppRouter() {
+export const AppRouter = () => {
 
     return (
       <Container
@@ -54,4 +32,3 @@ function AppRouter() {
     );
 }
  
-export default AppRouter;

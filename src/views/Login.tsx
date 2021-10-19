@@ -1,33 +1,20 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Container, Form } from 'react-bootstrap';
-import { useHistory } from 'react-router-dom';
-// import { postLogin } from '../services/auth'
 import { useAuth } from '../context/AuthContext';
 
 export const Login = () => {
 
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const {isAuthenticated, login} = useAuth(); // false // true
+  const [ email, setEmail ] = useState('');
+  const [ password, setPassword ] = useState('');
+  const { login } = useAuth(); 
 
   const user = { email, password }
-  let history = useHistory();
 
-  useEffect(() => {
-    
-    if (isAuthenticated === true) {
-      history.push('/')
-    }
-  }, [isAuthenticated, history])
-  
+  // Se renderiza a '/' cuando ve que isAuthenticated === true
 
   const handleSubmit = (e: React.ChangeEvent<any>) => {
     e.preventDefault();
-
     login(user);
-    /* console.log(isAuthenticated);
-    if(isAuthenticated){history.push('/');} */
-    
   }
 
   return (
