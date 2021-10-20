@@ -18,7 +18,7 @@ export const postUser = async (newUser: any) => {
 };
 
 
-export const getUsers = async (token: string) => {
+/* export const getUsers = async (token: string) => {
   const resp = await axios({
     method: "get",
     url: `${baseUrl}`,
@@ -78,3 +78,4 @@ export const putUsers = async (token:string, userUpdate: any, userId: number) =>
   });
   return resp;
 };
+ */
