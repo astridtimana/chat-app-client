@@ -9,6 +9,7 @@ export const postUser = async (newUser: any) => {
     method: "post",
     url: baseUrl,
     data: newUser,
+    withCredentials:true
   });
   if (resp.status !== 200) {
     return new Error("Error");
