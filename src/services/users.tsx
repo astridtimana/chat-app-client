@@ -1,13 +1,13 @@
 import axios from 'axios';
 
-// const baseUrl = "be-chat-app.herokuapp.com/users";
-const baseUrl = 'http://localhost:8080/users';
+// const url = "https://be-chat-app.herokuapp.com/users";
+const url = 'http://localhost:8080/users';
 
 
 export const postUser = async (newUser: any) => {
   const resp = await axios({
     method: "post",
-    url: baseUrl,
+    url: url,
     data: newUser,
     withCredentials:true
   });
