@@ -20,7 +20,6 @@ export const AppRouter = () => {
           <Router>
             <AuthProvider>
               <Switch>
-                {/* <Route exact path='/' component={Dashboard}></Route> */}
                 <Route path='/login' component={Login}></Route>
                 <Route path='/sign-up' component={Register}></Route>
                 <PrivateRoute path='/'><Dashboard/></PrivateRoute>

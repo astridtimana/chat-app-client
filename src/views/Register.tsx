@@ -21,21 +21,25 @@ export const Register = () => {
 
 
   return (
-    <Container fluid className="w-100 text-center py-3 d-flex flex-row justify-content-evenly">
-      <img
-        src="https://i.pinimg.com/564x/76/e1/b8/76e1b8b96085d2be3421b86000a636a9.jpg"
-        alt="img"
-        className="img-fluid mb-3 d-none d-md-block"
-        width="60%"
-      />
+    <Container fluid 
+      className="w-100 text-center py-3 d-flex flex-row justify-content-evenly align-items-center"
+      style={{height: "100vh"}}>
+      <div >
+        <img
+          src="https://i.pinimg.com/564x/76/e1/b8/76e1b8b96085d2be3421b86000a636a9.jpg"
+          alt="img"
+          className="img-fluid mb-3 d-none d-lg-block"
+          width="75%"
+        />
+      </div>
 
       <div className="userForm text-center "
-        style={{maxWidth: "600px", minWidth: "375px"}}
+        style={{maxWidth: "700px", minWidth: "375px"}}
         >
         <img
           src="https://i.pinimg.com/564x/76/e1/b8/76e1b8b96085d2be3421b86000a636a9.jpg"
           alt="img"
-          className="mx-auto d-block d-sm-none"
+          className="mx-auto d-block d-lg-none"
           width="60%"
         
         />

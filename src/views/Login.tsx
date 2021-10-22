@@ -18,20 +18,25 @@ export const Login = () => {
   }
 
   return (
-    <Container fluid className="w-100 text-center py-3 d-flex flex-row justify-content-evenly" 
-      style={{height: "100vh"}}>
-      <img
-        src="https://i.pinimg.com/564x/76/e1/b8/76e1b8b96085d2be3421b86000a636a9.jpg"
-        alt="img"
-        className="img-fluid mb-3 d-none d-md-block"
-        width="60%"
-      />
+    <Container fluid className="w-100 text-center py-3 d-flex flex-row justify-content-evenly align-items-center" 
+      style={{height: "100vh", maxWidth: "1000px"}}>
 
-      <section className="userForm text-center" style={{maxWidth: "600px", minWidth: "375px"}}>
+      <div>
+
         <img
           src="https://i.pinimg.com/564x/76/e1/b8/76e1b8b96085d2be3421b86000a636a9.jpg"
           alt="img"
-          className="mx-auto d-block d-sm-none"
+          className="img-fluid mb-3 d-none d-lg-block"
+          width="75%"
+        />
+      </div>
+
+
+      <section className="userForm text-center" style={{maxWidth: "750px", minWidth: "375px"}}>
+        <img
+          src="https://i.pinimg.com/564x/76/e1/b8/76e1b8b96085d2be3421b86000a636a9.jpg"
+          alt="img"
+          className="mx-auto d-block d-lg-none"
           width="60%"
         
         />
@@ -40,10 +45,6 @@ export const Login = () => {
           <h5 className="text-center">Crea tu cuenta</h5>
         </div>
 
-{/*         <div>
-          <h2 className="text-center p-3">¡Bienvenidx!</h2>
-          <h5 className="text-center mb-3">Ingresa a tu cuenta</h5>
-        </div> */}
         
         <Form className="d-flex flex-column align-items-center mb-2"/*  style={{minHeight:"19rem"}} */
           onSubmit={handleSubmit}
