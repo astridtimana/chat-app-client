@@ -5,9 +5,14 @@ import { PrivateRoute } from './PrivateRoute';
 import Dashboard from '../views/Chat';
 import { Login } from '../views/Login';
 import { Register } from '../views/Register';
+import socket from '../components/Socket';
+
+
 
 
 export const AppRouter = () => {
+
+  socket.emit('Connected', 'Holis from client')
 
     return (
       <Container
