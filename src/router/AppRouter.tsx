@@ -5,9 +5,14 @@ import { PrivateRoute } from './PrivateRoute';
 import Dashboard from '../views/Chat';
 import { Login } from '../views/Login';
 import { Register } from '../views/Register';
+import socket from '../components/Socket';
+
+
 
 
 export const AppRouter = () => {
+
+  socket.emit('Connected', 'Holis from client')
 
     return (
       <Container
@@ -20,7 +25,6 @@ export const AppRouter = () => {
           <Router>
             <AuthProvider>
               <Switch>
-                {/* <Route exact path='/' component={Dashboard}></Route> */}
                 <Route path='/login' component={Login}></Route>
                 <Route path='/sign-up' component={Register}></Route>
                 <PrivateRoute path='/'><Dashboard/></PrivateRoute>

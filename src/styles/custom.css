@@ -11979,4 +11979,12 @@ fieldset:disabled .btn {
 .desktopbG {
   background-color: pink;
 }
+
+.prcFirstSide {
+  width: 40%;
+}
+
+.prcSecondSide {
+  width: 60%;
+}
 /*# sourceMappingURL=custom.css.map */
