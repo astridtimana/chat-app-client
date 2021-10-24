@@ -8,11 +8,10 @@ import { Register } from '../views/Register';
 import socket from '../components/Socket';
 
 
-
-
 export const AppRouter = () => {
 
-  socket.emit('Connected', 'Holis from client')
+
+  socket.emit('connected', 'Holis from client')
 
     return (
       <Container
