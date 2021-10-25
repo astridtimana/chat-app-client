@@ -2,7 +2,7 @@ import { Container } from 'react-bootstrap';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { AuthProvider } from '../context/AuthContext';
 import { PrivateRoute } from './PrivateRoute';
-import Dashboard from '../views/Chat';
+import { Dashboard } from '../views/Chat';
 import { Login } from '../views/Login';
 import { Register } from '../views/Register';
 import socket from '../components/Socket';
@@ -26,7 +26,7 @@ export const AppRouter = () => {
               <Switch>
                 <Route path='/login' component={Login}></Route>
                 <Route path='/sign-up' component={Register}></Route>
-                <PrivateRoute path='/' component={Dashboard}></PrivateRoute>
+                <PrivateRoute path='/'><Dashboard/></PrivateRoute>
               </Switch>
             </AuthProvider>
           </Router>

@@ -1,25 +1,35 @@
-import axios from 'axios';
+import axios, { AxiosResponseHeaders } from 'axios';
+import jwtDecode from 'jwt-decode'
+// import { postLogin } from './auth';
 
-<<<<<<< HEAD
-const url = "https://be-chat-app.herokuapp.com/users";
-// const url = 'http://localhost:8080/users';
-=======
 // const url = "https://be-chat-app.herokuapp.com/users";
 const url = '//localhost:8080/users';
->>>>>>> 17588304718650e824bb58133b141db5da3f465c
 
 
 export const postUser = async (newUser: any) => {
-  const resp = await axios({
+  //@ts-ignore
+  const res: AxiosResponseHeaders = await axios({
     method: "post",
     url: url,
     data: newUser,
     withCredentials:true
   });
-  if (resp.status !== 200) {
-    return new Error("Error");
+
+  /* const user = { 
+    email: newUser.email, 
+    password: newUser.password 
   }
-  return resp;
+
+  await postLogin(user) */
+
+  if (Number(res.status) !== 200) {
+    return new Error("Incorrect email or password");
+  }
+
+  const storedToken = localStorage.setItem('token', res.data)
+  //@ts-ignore
+  const decodeToken = jwtDecode(storedToken.token)
+  return decodeToken;
 };
 
 

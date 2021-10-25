@@ -5,10 +5,7 @@ import { Messages } from '../components/Messages';
 
 import '../styles/chat.css';
 
-export default function Dashboard() {
-
-  const token = localStorage.getItem('token')
-  if(token)
+export const Dashboard = () => {
 
   return (
     <div className="messaging">

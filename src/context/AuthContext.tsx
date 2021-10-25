@@ -19,32 +19,33 @@ export const AuthProvider = ({ children }:any) => {
   let history = useHistory();
 
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [userData, setUserData] = useState(null)
 
   // Función para setear la autenticación mediante un callback
   const setAuthFn = (cb:any) => cb
     .then((res:any) => {
-      localStorage.setItem('token', res.token)
+      console.log(res)
       setIsAuthenticated(true);
+      setUserData(res.uid);
     })
     .catch((err: any) => {
       console.log(err)
       setIsAuthenticated(false)
     })
 
-  const register = (data:object) => setAuthFn(postUser(data))
+  const register = (data:any) => setAuthFn(postUser(data))
   
-  const login = (data:object) => setAuthFn(postLogin(data))
+  const login = (data:any) => setAuthFn(postLogin(data))
 
   const logout = () => {
-    document.cookie = "token= ; expires = Thu, 01 Jan 1970 00:00:00 GMT"
+    // document.cookie = "token= ; expires = Thu, 01 Jan 1970 00:00:00 GMT"
     localStorage.removeItem('token');
     setIsAuthenticated(false)
   }
 
   const checkAuth = () => {
-    if (document.cookie && !isAuthenticated) {
-      // si existe cookie y si no está autenticado, entonces setea la autenticación
-      // sino, da igual :p
+    const token = localStorage.getItem('token')
+    if (token && !isAuthenticated) {
       setIsAuthenticated(true)
     }
   }
@@ -61,7 +62,7 @@ export const AuthProvider = ({ children }:any) => {
   checkAuth();
 
   return (
-    <AuthContext.Provider value={{ isAuthenticated, login, logout , register}} >
+    <AuthContext.Provider value={{ isAuthenticated, login, logout , register, userData}} >
       { children }
     </ AuthContext.Provider>
   )
