@@ -14,7 +14,7 @@ export const AppRouter = () => {
   socket.emit('connected', 'Holis from client')
 
     return (
-      <Container
+      <Container fluid
         /* className="d-flex justify-content-center text-general align-items-center"   */
         /* el align items center lo pone cool pero ya en el chat tendríamos que cambiar
         así que mejor lo vemos luego pero por lo pronto lo podemos dejar ahí uwu */

@@ -1,5 +1,5 @@
 import React from 'react';
-import { ChatSelect } from '../components/ChatSelect';
+// import { ChatSelect } from '../components/ChatSelect';
 import { InboxPeople } from '../components/InboxPeople';
 import { Messages } from '../components/Messages';
 
@@ -12,12 +12,12 @@ export const Dashboard = () => {
       <div className="inbox_msg">
 
         <InboxPeople />
-
-        {
-          (!true)
+        <Messages />
+        {/* {
+          (true)
             ? <Messages />
             : <ChatSelect />
-        }
+        } */}
 
 
       </div>

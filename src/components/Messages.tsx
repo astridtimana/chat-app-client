@@ -5,7 +5,7 @@ import { SendMsg } from './SendMsg'
 
 export const Messages = () => {
   return (
-    <div>
+    <div className="mesgs">
       <IncomingMsg />
       <OutgoingMsg />
       <SendMsg />
