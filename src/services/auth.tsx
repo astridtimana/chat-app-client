@@ -1,11 +1,11 @@
 import axios, { AxiosResponseHeaders } from 'axios';
 
-const url = 'https://be-chat-app.herokuapp.com';
-// const url = 'http://localhost:8080';
+// const url = 'https://be-chat-app.herokuapp.com';
+const url = 'http://localhost:8080';
 
 export const postLogin = async (data: any) => {
   const res: AxiosResponseHeaders = await axios.post(`${url}`, data, {withCredentials:true} );
-  console.log(res.data);
+  // console.log(res.data);
   return res.data
 }
 

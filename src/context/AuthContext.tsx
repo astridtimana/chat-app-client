@@ -22,7 +22,8 @@ export const AuthProvider = ({ children }:any) => {
 
   // Función para setear la autenticación mediante un callback
   const setAuthFn = (cb:any) => cb
-    .then(() => {
+    .then((res:any) => {
+      localStorage.setItem('token', res.token)
       setIsAuthenticated(true);
     })
     .catch((err: any) => {
@@ -36,6 +37,7 @@ export const AuthProvider = ({ children }:any) => {
 
   const logout = () => {
     document.cookie = "token= ; expires = Thu, 01 Jan 1970 00:00:00 GMT"
+    localStorage.removeItem('token');
     setIsAuthenticated(false)
   }
 

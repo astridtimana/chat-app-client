@@ -26,7 +26,7 @@ export const AppRouter = () => {
               <Switch>
                 <Route path='/login' component={Login}></Route>
                 <Route path='/sign-up' component={Register}></Route>
-                <PrivateRoute path='/'><Dashboard/></PrivateRoute>
+                <PrivateRoute path='/' component={Dashboard}></PrivateRoute>
               </Switch>
             </AuthProvider>
           </Router>
