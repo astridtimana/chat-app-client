@@ -7,6 +7,8 @@ import '../styles/chat.css';
 
 export default function Dashboard() {
 
+  const token = localStorage.getItem('token')
+  if(token)
 
   return (
     <div className="messaging">

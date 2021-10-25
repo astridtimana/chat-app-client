@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 // const url = "https://be-chat-app.herokuapp.com/users";
-const url = 'http://localhost:8080/users';
+const url = '//localhost:8080/users';
 
 
 export const postUser = async (newUser: any) => {
