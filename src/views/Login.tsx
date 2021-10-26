@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState, ChangeEvent  } from 'react';
 import { Container, Form } from 'react-bootstrap';
 import { useAuth } from '../context/AuthContext';
 
@@ -12,7 +12,7 @@ export const Login = () => {
 
   // Se renderiza a '/' cuando ve que isAuthenticated === true
 
-  const handleSubmit = (e: React.ChangeEvent<any>) => {
+  const handleSubmit = (e: ChangeEvent<any>) => {
     e.preventDefault();
     login(user);
   }

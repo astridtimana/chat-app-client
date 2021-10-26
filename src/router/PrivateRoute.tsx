@@ -5,7 +5,7 @@ import { useAuth } from "../context/AuthContext";
 export const PrivateRoute = ({children, rest}:any) => {
 
   const { isAuthenticated } = useAuth();
-  console.log(isAuthenticated);
+  // console.log('priv-route', isAuthenticated);
 
   return (  
     <Route
