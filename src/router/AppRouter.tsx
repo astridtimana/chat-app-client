@@ -1,5 +1,5 @@
 import { Container } from 'react-bootstrap';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+  import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { AuthProvider } from '../context/AuthContext';
 import { PrivateRoute } from './PrivateRoute';
 import Dashboard from '../views/Chat';
