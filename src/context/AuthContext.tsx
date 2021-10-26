@@ -24,7 +24,6 @@ export const AuthProvider = ({ children }:any) => {
   // Función para setear la autenticación mediante un callback
   const setAuthFn = (cb:any) => cb
     .then((res:any) => {
-      console.log(res)
       setIsAuthenticated(true);
       setUserData(res.uid);
     })
@@ -58,7 +57,6 @@ export const AuthProvider = ({ children }:any) => {
   }, [history, isAuthenticated])
   
   // Que se cumpla la función de chequeo de autenticación y cookies
-  // Igual preguntar otra vez para que nos quede más claro esta función fuera
   checkAuth();
 
   return (
