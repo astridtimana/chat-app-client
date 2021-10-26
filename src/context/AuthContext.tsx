@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, createContext, useContext } from 'react';
 import { useHistory } from 'react-router-dom';
-import { postLogin/* , getCurrentUser */} from '../services/auth';
-import {postUser} from '../services/users';
+import { postLogin } from '../services/auth';
+import { postUser } from '../services/users';
 
 interface authContextType {
   isAuthenticated: boolean;
@@ -10,9 +10,9 @@ interface authContextType {
   logout:() => void;
 }
 
-export const AuthContext = React.createContext({})
+export const AuthContext = createContext({})
 
-export const useAuth = () => React.useContext(AuthContext) as authContextType;
+export const useAuth = () => useContext(AuthContext) as authContextType;
 
 export const AuthProvider = ({ children }:any) => {
 

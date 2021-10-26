@@ -11,7 +11,7 @@ export const postLogin = async (data: any) => {
   const storage = localStorage.getItem('token')
   if (storage) {
     const decodedToken = jwtDecode(storage)
-    console.log(decodedToken)
+    // console.log(decodedToken)
     return decodedToken;
   }
 }

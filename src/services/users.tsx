@@ -3,7 +3,7 @@ import jwtDecode from 'jwt-decode'
 // import { postLogin } from './auth';
 
 // const url = "https://be-chat-app.herokuapp.com/users";
-const url = '//localhost:8080/users';
+const url = 'http://localhost:8080/users';
 
 
 export const postUser = async (newUser: any) => {
@@ -14,13 +14,6 @@ export const postUser = async (newUser: any) => {
     data: newUser,
     withCredentials:true
   });
-
-  /* const user = { 
-    email: newUser.email, 
-    password: newUser.password 
-  }
-
-  await postLogin(user) */
 
   if (Number(res.status) !== 200) {
     return new Error("Incorrect email or password");
@@ -33,23 +26,23 @@ export const postUser = async (newUser: any) => {
 };
 
 
-/* export const getUsers = async (token: string) => {
-  const resp = await axios({
+export const getUsers = async (token: string) => {
+  const res = await axios({
     method: "get",
-    url: `${baseUrl}`,
+    url: `${url}`,
     headers: {
       Authorization: `Bearer ${token}`,
       "Content-Type": "application/json",
     },
   });
-  if (resp.status !== 200) {
+  if (res.status !== 200) {
     return new Error("Error");
   }
-  return resp;
+  return res.data;
 };
 
 
-export const getUser = async (token: string, userId: number) => {
+/* export const getUser = async (token: string, userId: number) => {
   const resp = await axios({
     method: "get",
     url: `${baseUrl}/${userId}`,
