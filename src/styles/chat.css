@@ -9,7 +9,6 @@ img {
 
 .inbox_people {
   background: #f8f8f8 none repeat scroll 0 0;
-  float: left;
   overflow: hidden;
   width: 30%;
   border-right: 1px solid #c4c4c4;
@@ -17,7 +16,13 @@ img {
 
 .inbox_msg {
   border: 1px solid #c4c4c4;
-  clear: both;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   overflow: hidden;
   height: 100vh;
 }
@@ -120,7 +125,6 @@ img {
 }
 
 .messages {
-  float: right;
   width: 70%;
 }
 
@@ -236,5 +240,13 @@ textarea {
   right: 0;
   width: 60%;
   text-align: center;
+}
+
+.alert-info {
+  color: #ffffff;
+  background-color: #cff4fc;
+  border-color: #b6effb;
+  margin: auto;
+  height: 20vh;
 }
 /*# sourceMappingURL=chat.css.map */
