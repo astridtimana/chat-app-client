@@ -1,12 +1,15 @@
 import React, { useState, ChangeEvent, useContext } from 'react'
 import { Form } from 'react-bootstrap'
+import { ChatContext } from '../context/chat/ChatContext';
 import { SocketContext } from '../context/SocketContext';
 
 export const SendMsg = () => {
 
   const [msg, setMsg] = useState('');
   //@ts-ignore
-  const {socket} = useContext(SocketContext)
+  const {socket} = useContext(SocketContext);
+   //@ts-ignore
+  const {chatState} = useContext(ChatContext)
 
   const onChange =(e:ChangeEvent<any>)=>{
     setMsg(e.target.value);
@@ -25,9 +28,10 @@ export const SendMsg = () => {
     // }
 
     //TODO: Hacer el dispatch del mensaje
-    socket.emit('mensaje-personal', {
-      mensaje: msg
-          //   de: //UID user que envia el msg
+    socket.emit('personal-message', {
+      toId:chatState.activeChat,
+      msg
+    //   de: //UID user que envia el msg
     //   para: //UID user que recibe msg
     //   mensaje: // lo que quiero enviar
     })
