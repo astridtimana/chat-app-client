@@ -12,10 +12,15 @@ export const useSocket = () => {
 
   // CONECTAR SOCKET
   const connectSocket = useCallback(() => { // conecta manualmente al usuario, para que no sea automático
+
+    const token = localStorage.getItem('token');
+    console.log(token);
+    
     const tempSocket = io( path, {
       transports: ['websocket'],
       autoConnect: true,
-      forceNew: true // se verá forzado a crear una conexión cuando esta fn se llame
+      forceNew: true, // se verá forzado a crear una conexión cuando esta fn se llame
+      query: {'x-token':token}
     });
     setSocket(tempSocket);
   }, [])
